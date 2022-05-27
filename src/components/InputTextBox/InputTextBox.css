@@ -1,0 +1,11 @@
+.inputbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.inputbox h5{
+    margin: 0;
+    width: 200px;
+    padding-bottom: 16px;
+}

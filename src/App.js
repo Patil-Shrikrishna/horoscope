@@ -62,7 +62,7 @@ const zodiac = [
     const oldDescription = localStorage.getItem("description");
     return oldDescription ? JSON.parse(oldDescription) : undefined
   })
-  const getHoroscopeUrl=`https://astro-daily-live-horoscope.p.rapidapi.com/horoscope/${formData.sign.toLowerCase()}/${(formData.date)}`
+  const getHoroscopeUrl=`your URL here${formData.sign.toLowerCase()}/${(formData.date)}`
   
   function handleChange(event){
     setFormData(prevFormData => {
@@ -99,8 +99,8 @@ console.log(altColor)
       method: 'GET',
       url: getHoroscopeUrl,
       headers: {
-        'X-RapidAPI-Host': 'astro-daily-live-horoscope.p.rapidapi.com',
-        'X-RapidAPI-Key': 'd650837598mshac5d5a14079b0a6p1d9208jsn24cc089503e9'
+        //  'X-RapidAPI-Host':  'your api host, 
+        //  'X-RapidAPI-Key':  'your api key
       }
     };
     axios.request(options).then(function (response) {

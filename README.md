@@ -2,6 +2,90 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+# Develop a ReactJS horoscope app
+
+This is a solution to the [A ReactJS horoscope app] 
+
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Useful resources](#useful-resources)
+
+## Overview
+
+### The challenge
+
+React.JS Task
+Develop a ReactJS horoscope app using the following details:
+- UI should have input provision for the following,
+- Upon adding all required input fields the UI should display the horoscope
+details which should include (but not limited to):
+- Horoscope data should be fetched from an online public API
+- Horoscope sign (Leo, Libra, Aquarius etc)
+    - - Name
+    - - Horoscope date (today, tomorrow or yesterday)
+    - - Email address
+    - - Submit button to fetch the horoscope details
+    - - Name of the User
+    - - Horoscope date
+    - - Horoscope description
+    - - Horoscope sign
+Bonus Points:
+- Use ReactJS
+- Form validation
+- All fields are required
+- Email address validation
+- If the current date falls within the entered horoscope date, the UI
+should indicate so
+- eg. If the horoscope sign selected is "Capricorn" (date range: Dec
+22 - Jan 19) and today's date is Jan 17, the horoscope
+description's background colour will be displayed with an
+alternate colour.
+- Details persist on page refresh
+- UI should be a single page UI with all components accessible at all
+times
+- UI should be optimized for laptop screens (1024px minimum)
+- Bonus if optimized for mobile screens (425px)
+- Use React UI Component library - "PrimeReact"
+
+### Screenshot
+
+![Desktop View](./Screenshot/desktop-view.png)
+![Mobile View](./Screenshot/mobile-view.png)
+
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- CSS Grid
+- Mobile-first workflow
+- Axios
+- moment
+- [React](https://reactjs.org/) - JS library
+- [Primereact](https://www.primefaces.org/primereact/) - JS Library
+
+
+### What I learned
+
+- Integrating API's.
+- Primereact - A React JS components library.
+- Axios for API Integration.
+- moment - The moment module is used for parsing, validating, manipulating, and displaying dates and times in JavaScript.
+
+### Useful resources
+
+- [Primereact](https://www.primefaces.org/primereact/) - This helped me to learn how to use Primereact library components. I'd recommend it to anyone still learning this concept.
+
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -28,14 +28,14 @@ Develop a ReactJS horoscope app using the following details:
 details which should include (but not limited to):
 - Horoscope data should be fetched from an online public API
 - Horoscope sign (Leo, Libra, Aquarius etc)
-    - - Name
-    - - Horoscope date (today, tomorrow or yesterday)
-    - - Email address
-    - - Submit button to fetch the horoscope details
-    - - Name of the User
-    - - Horoscope date
-    - - Horoscope description
-    - - Horoscope sign
+    - Name
+    - Horoscope date (today, tomorrow or yesterday)
+    - Email address
+    - Submit button to fetch the horoscope details
+    - Name of the User
+    - Horoscope date
+    - Horoscope description
+    - Horoscope sign
 Bonus Points:
 - Use ReactJS
 - Form validation

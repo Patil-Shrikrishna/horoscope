@@ -22,7 +22,8 @@ function App() {
     { name:  "" , 
       email: "" , 
       sign:  "" , 
-      date:  ""
+      date:  "" ,
+      day:  ""
    }
   })
   const [isLoading, setIsLoading] = React.useState(false);
@@ -62,8 +63,7 @@ const zodiac = [
     const oldDescription = localStorage.getItem("description");
     return oldDescription ? JSON.parse(oldDescription) : undefined
   })
-  const getHoroscopeUrl=`your URL here${formData.sign.toLowerCase()}/${(formData.date)}`
-  
+    
   function handleChange(event){
     setFormData(prevFormData => {
       const {name, value} = event.target;
@@ -73,14 +73,21 @@ const zodiac = [
       }
       if(name==='date'){
         updatedState[name] = moment(value).format("YYYY-MM-DD")
-      }
+        if (updatedState.date === today){
+          updatedState.day = 'today'
+        }else if (updatedState.date === yesterdayDate) {
+          updatedState.day = 'yesterday'
+        }else if (updatedState.date === tomorrowDate){
+          updatedState.day = 'tomorrow'
+        }
+      } 
+      
       localStorage.setItem("formData", JSON.stringify(updatedState))
       return updatedState
     })
   }
   function formSubmit(event){
     console.log("submit called");
-    // event.preventDefault()
     if(validateInput()){
       setIsLoading(true);
       handleApi();
@@ -96,18 +103,18 @@ const validateInput = () => {
 console.log(altColor)
   function handleApi(){
     const options = {
-      method: 'GET',
-      url: getHoroscopeUrl,
+      method: 'POST',
+      url: 'https://sameer-kumar-aztro-v1.p.rapidapi.com/',
+      params: {sign: formData.sign, day: formData.day},
       headers: {
-        //  'X-RapidAPI-Host':  'your api host, 
-        //  'X-RapidAPI-Key':  'your api key
+        'X-RapidAPI-Key': '4aab697e7bmsh121f1f8d100cdc4p1d0f2fjsn0e6331d63096',
+        'X-RapidAPI-Host': 'sameer-kumar-aztro-v1.p.rapidapi.com'
       }
     };
     axios.request(options).then(function (response) {
       console.log(response);
-      const horoscope = Object.keys(response.data);
       setDescription(()=>{
-        const description = response.data[horoscope[0]].split("- ")[1]
+        const description = response.data.description
         localStorage.setItem("description", JSON.stringify(description))
         return description;
       });
@@ -161,7 +168,6 @@ console.log(altColor)
             </div>
           </div>
           </div>
-          {/* {formData.date && <h5 style={{textAlign: "center"}}> Selected date : {formData.date} </h5>} */}
           <div className='button_group'>
             <Button onClick={formSubmit} type="submit" label='Submit' />
             <Button label='Reset' onClick={() => {resetUserDetails()}}/>
